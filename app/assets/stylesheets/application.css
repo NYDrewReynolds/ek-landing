@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require font-awesome
  *= require_self
  */
 
@@ -22,6 +23,7 @@ body {
     color: white;
     font-family: "Futura";
     text-align: center;
+    background-color: black;
 }
 
 .logo {
@@ -35,4 +37,34 @@ body {
 
 .waiting-list-text {
     font-size: .75em;
+}
+
+form {
+    border-style: double;
+    padding: 5px;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+input {
+    color:black;
+}
+
+.row {
+    margin: 0;
+}
+
+.footer {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    text-align: right;
+    font-size: 1.35em;
+}
+
+i {
+    color: white;
 }
