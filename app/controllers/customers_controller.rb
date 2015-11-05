@@ -6,10 +6,15 @@ class CustomersController < ApplicationController
 
   def create
     @customer = Customer.new(customer_params)
-    if @customer.save
-      redirect_to customer_path(@customer)
+    customer_exists = Customer.find_by(email: @customer.email)
+    if customer_exists
+      redirect_to customer_path(customer_exists)
     else
-      render :new
+      if @customer.save
+        redirect_to customer_path(@customer)
+      else
+        render :new
+      end
     end
   end
 
@@ -22,7 +27,7 @@ class CustomersController < ApplicationController
   private
 
   def customer_params
-    params.require(:customer).permit(:first_name, :last_name, :email)
+    params.require(:customer).permit(:first_name, :last_name, :email, :mailing_list, :waiting_list)
   end
 
 end

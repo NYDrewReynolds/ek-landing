@@ -11,7 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'twitter-bootstrap-rails'
 gem 'font-awesome-rails'
-
+gem 'administrate'
 gem 'rails_12factor', group: :production
 
 # gem 'bcrypt', '~> 3.1.7'

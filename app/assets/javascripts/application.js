@@ -15,3 +15,9 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function () {
+    $('.has-popover').popover({
+        trigger: 'hover'
+    });
+});

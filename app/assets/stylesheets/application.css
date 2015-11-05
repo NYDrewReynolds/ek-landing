@@ -36,7 +36,9 @@ body {
 }
 
 .waiting-list-text {
-    font-size: 1em;
+    font-size: 1.25em;
+    text-align: left;
+    padding-left: 20px;
 }
 
 form {

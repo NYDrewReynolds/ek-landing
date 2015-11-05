@@ -9,31 +9,46 @@
     <h1>NEW YORK</h1>
   </div>
 </div>
+<% if @customer.waiting_list %>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="customer-info">
+          <h1>Welcome, <%= @customer.first_name %>!</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <h1>Welcome, <%= @customer.first_name %>!</h1>
-    <h4 class="tagline">Thank you for signing up to our Mailing List.</h4>
-  </div>
-</div>
+          <h3>You are <%= @customer.id.ordinalize %> on the Waiting List!</h3>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="customer-info">
-    <h3>You are <%= @customer.id.ordinalize %> on the Waiting List!</h3>
-    <p>There are only 45 numbered bags available by December 24th, 2015. We sincere- ly appologize that we may not be
-      able to fulfill all names on the waiting list. Enter payment method to further secure your spot, but we cannot
-      promise that we will be able to meet every person in queu. (Note that your card will be charged only when the bag
-      is shipped).</p>
-    <p>If you truly love our bag, share with as many friends as you like and we will gladly give you priority to receive
-      one of the 45 numbered bags of this year.</p>
-    <p>
-      <a class="btn btn-lg btn-info" target="_blank" href="https://twitter.com/intent/tweet?text=Eastern%20Kingdom%20is%20Re-Imagining%20Athletic%20Handbags%21%20http%3A%2F%2Feasternkingdomnyc.com">
-        Share!</a></p>
+          <p>There are only 45 numbered bags available by December 24th, 2015. We sincere- ly appologize that we may not
+            be able to fulfill all names on the waiting list. Enter payment method to further secure your spot, but we
+            cannot promise that we will be able to meet every person in queu. (Note that your card will be charged only
+            when the bag is shipped).</p>
 
+          <p>If you truly love our bag, share with as many friends as you like and we will gladly give you priority to
+            receive one of the 45 numbered bags of this year.</p>
+
+          <p>
+
+            <button type="button"
+                    class="btn btn btn-lg btn-info has-popover"
+                    data-toggle="popover"
+                    title="Tell Your Friends!"
+                    data-content="<%= render "shared/social" %>">
+              Share!
+            </button>
+
+            <!--<a class="btn btn-lg btn-info" target="_blank" href="https://twitter.com/intent/tweet?text=Eastern%20Kingdom%20is%20Re-Imagining%20Athletic%20Handbags%21%20http%3A%2F%2Feasternkingdomnyc.com">Share!</a>-->
+          </p>
+
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+<% else %>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1>Welcome, <%= @customer.first_name %>!</h1>
+        <h4 class="tagline">Thank you for signing up to our Mailing List.</h4>
+      </div>
+    </div>
+<% end %>
 
 <div class="row">
   <div class="col-md-2 col-md-offset-10">
